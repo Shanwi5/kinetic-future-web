@@ -3,13 +3,13 @@ import React from 'react';
 
 const mentors = [
   {
-    name: 'John Doe',
-    role: 'Lead Blockchain Mentor',
+    name: 'Dr.Anitha M L',
+    role: 'Mentor',
     image: '/images/john.jpg', // Make sure this path is correct
   },
   {
-    name: 'Jane Smith',
-    role: 'AI & ML Mentor',
+    name: 'Dr.Mahesh Kaulti',
+    role: 'Mentor',
     image: '/images/jane.jpg',
   },
 ];
