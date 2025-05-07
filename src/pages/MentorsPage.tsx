@@ -1,23 +1,41 @@
+// components/Mentors.jsx
 import React from 'react';
-import { useDocumentTitle } from '@/hooks/useDocumentTitle';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Mentors from '@/components/Mentors';
-import ParticleBackground from '@/components/ParticleBackground';
 
-const MentorsPage = () => {
-  useDocumentTitle('Mentors | Developers Of Tomorrow');
+const mentors = [
+  {
+    name: 'John Doe',
+    role: 'Lead Blockchain Mentor',
+    image: '/images/john.jpg', // Make sure this path is correct
+  },
+  {
+    name: 'Jane Smith',
+    role: 'AI & ML Mentor',
+    image: '/images/jane.jpg',
+  },
+];
 
+const Mentors = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <ParticleBackground />
-      <Navbar />
-      <div className="pt-24">
-        <Mentors />
+    <section className="text-center px-4">
+      <h2 className="text-3xl font-bold mb-8">Our Mentors</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {mentors.map((mentor, index) => (
+          <div
+            key={index}
+            className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md"
+          >
+            <img
+              src={mentor.image}
+              alt={mentor.name}
+              className="w-32 h-32 mx-auto rounded-full object-cover mb-4"
+            />
+            <h3 className="text-xl font-semibold">{mentor.name}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{mentor.role}</p>
+          </div>
+        ))}
       </div>
-      <Footer />
-    </div>
+    </section>
   );
 };
 
-export default MentorsPage;
+export default Mentors;
